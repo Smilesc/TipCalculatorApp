@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TipCalculator-project-miles</string>
+    <string name="radio_button_width">60dp</string>
+</resources>
