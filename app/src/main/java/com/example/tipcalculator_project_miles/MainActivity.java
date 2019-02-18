@@ -11,8 +11,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import java.security.Key;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton radioButton15;
     RadioButton radioButton20;
     RadioButton radioButton25;
+
     boolean amountValid = false;
     boolean numPeopleValid = false;
     boolean radioButtonOtherEditValid = false;
@@ -117,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 numPeopleValid = false;
                 radioButtonOtherEditValid = false;
 
+                totalTip.setText(getResources().getString(R.string.total_tip));
+                tipPerPerson.setText(getResources().getString(R.string.tip_per_person));
             }
         });
     }
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.numPeople:
                         try {
                             if (!(numPeople.getText().toString().equals("")) && Integer.parseInt(numPeople.getText().toString()) >= 1) {
-
+                                System.out.println(numPeople.getText().toString());
                                 numPeopleValid = true;
 
                                 if (amountValid && radioButtonOther.isChecked() && radioButtonOtherEditValid) {
@@ -162,8 +163,12 @@ public class MainActivity extends AppCompatActivity {
                             showErrorAlert("Please enter a valid number of people", R.id.numPeople);
                         }
 
+
                     case R.id.radioButtonOtherEdit:
                         try {
+//                            if(Integer.parseInt(radioButtonOtherEdit.getText().toString()) > 100){
+//                                throw new KeyException();
+//                            }
                             if (!(radioButtonOtherEdit.getText().toString().equals("")) && Integer.parseInt(radioButtonOtherEdit.getText().toString()) >= 1 ) {
 
                                 radioButtonOtherEditValid = true;
@@ -177,6 +182,9 @@ public class MainActivity extends AppCompatActivity {
                         } catch (NumberFormatException e) {
                             showErrorAlert("Please enter an amount between 1 and 100", R.id.radioButtonOtherEdit);
                         }
+//                        catch (KeyException e){
+//                            showErrorAlert("Please enter an amount between 1 and 100000", R.id.radioButtonOtherEdit);
+//                        }
                 }
             }
             return false;
@@ -211,7 +219,6 @@ public class MainActivity extends AppCompatActivity {
                             calculate.setEnabled(true);
                         }
                         radioButtonOtherEdit.setEnabled(false);
-
                 }
             }
         };
@@ -228,5 +235,32 @@ public class MainActivity extends AppCompatActivity {
                                 findViewById(fieldId).requestFocus();
                             }
                         }).show();
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        String totTip = totalTip.getText().toString();
+        String tipPerPer = tipPerPerson.getText().toString();
+
+        outState.putBoolean("calculateValue", calculate.isEnabled());
+        outState.putBoolean("radioButtonOtherEditValue", radioButtonOtherEdit.isEnabled());
+        outState.putString("totalTip", totTip);
+        outState.putString("tipPerPerson", tipPerPer);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle bundle) {
+        super.onRestoreInstanceState(bundle);
+
+        String totTip = bundle.getString("totalTip");
+        totalTip.setText(totTip);
+
+        String tipPerPer = bundle.getString("tipPerPerson");
+        tipPerPerson.setText(tipPerPer);
+        radioButtonOtherEdit.setEnabled(bundle.getBoolean("radioButtonOtherEditValue"));
+        calculate.setEnabled(bundle.getBoolean("calculateValue"));
     }
 }

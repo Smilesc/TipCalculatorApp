@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="zero_dp">0dp</dimen>
+
+    <dimen name="enter_text_height">44dp</dimen>
+    <dimen name="numPeople_margin_top">96dp</dimen>
+
+    <dimen name="amount_layout_width">119dp</dimen>
+
     <dimen name="radio_button_width">60dp</dimen>
+    <dimen name="margin1">8dp</dimen>
+    <dimen name="radio_abs_y">125dp</dimen>
+    <dimen name="radio_abs_x">16dp</dimen>
+
+    <dimen name="percent_layout_height">16dp</dimen>
+
+    <dimen name="radioGroup_layout_width">331dp</dimen>
+    <dimen name="radioGroup_margin_top">157dp</dimen>
+
+    <dimen name="radiobuttonotheredit_layout_width">29dp</dimen>
+    <dimen name="radiobuttonotheredit_layout_height">48dp</dimen>
+    <dimen name="radiobuttonotheredit_textSize">14sp</dimen>
+    <dimen name="radiobuttonotheredit_horizontal_bias">1.0</dimen>
+    <dimen name="radiobuttonotheredit_vertical_bias">0.014</dimen>
+
+    <dimen name="radioButtonOther_layout_width">80dp</dimen>
+
+    <dimen name="tip_textSize">20sp</dimen>
+
+    <dimen name="totalTip_margin_bottom">21dp</dimen>
+
+    <dimen name="tipPerPerson_margin_top">352dp</dimen>
+
+    <dimen name="calculate_margin_start">88dp</dimen>
+
+    <dimen name="dollar_margin_top_portrait">108dp</dimen>
+    <dimen name="dollar_margin_top_land">64dp</dimen>
+
+    <dimen name="percent_marginEnd">32dp</dimen>
+
+    <dimen name="amount_marginEnd_land">420dp</dimen>
+    <dimen name="numPeople_marginTop_land">52dp</dimen>
+
+    <dimen name="radioGroup_marginBot_land">48dp</dimen>
+    <dimen name="radioGroup_layoutWidth_land">338dp</dimen>
+    <dimen name="radioGroup_layoutHeight_land">75dp</dimen>
+
+    <dimen name="radioButtonOtherEdit_marginStart_land">520dp</dimen>
+
+    <dimen name="percent_marginEnd_land">192dp</dimen>
+
+    <dimen name="tipPerPerson_marginTop_land">292dp</dimen>
 </resources>
