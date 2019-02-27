@@ -3,7 +3,9 @@
     <string name="radio_button_width">60dp</string>
 
     <string name="total_tip">Total Tip:</string>
+    <string name="total_tip_format" formatted="false">Total Tip: $%.2f</string>
     <string name="tip_per_person">Tip Per Person:</string>
+    <string name="tip_per_person_format">"Tip Per Person: $%.2f"</string>
 
     <string name="amount">Amount</string>
     <string name="num_people"># people</string>

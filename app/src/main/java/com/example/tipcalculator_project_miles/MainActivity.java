@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 double tipTot = amt * (prcnt_amt/100);
                 double tipPerPrsn = tipTot/ppl;
 
-                totalTip.setText(String.format(Locale.US, "Total Tip: $%.2f", tipTot));
-                tipPerPerson.setText(String.format(Locale.US, "Tip Per Person: $%.2f", tipPerPrsn));
+                totalTip.setText(String.format(getString(R.string.total_tip_format), tipTot));
+                tipPerPerson.setText(String.format(getString(R.string.tip_per_person_format), tipPerPrsn));
             }
         });
 
